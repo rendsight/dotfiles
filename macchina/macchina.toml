@@ -1,0 +1,10 @@
+show = [
+    "Host",
+    # "Machine",
+    "Distribution",
+    "WindowManager",
+    "Shell",
+    "Terminal",
+    "Packages",
+    "Memory",
+]
