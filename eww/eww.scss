@@ -1,0 +1,40 @@
+* {
+  all: unset;
+}
+
+//Global Styles
+.bar {
+  background-color: #000;
+  color: #fff;
+  padding: 6px 24px;
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 500;
+  font-feature-settings: "tnum";
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+  all: unset;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #fff;
+  color: #000000;
+  border-radius: 2px;
+}
+
+.metric scale trough {
+  all: unset;
+  background-color: #404040;
+  border-radius: 2px;
+  min-height: 10px;
+  min-width: 32px;
+  margin-left: 6px;
+}
+
+.time {
+  margin-left: 1rem;
+}
