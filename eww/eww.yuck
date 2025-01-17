@@ -1,0 +1,60 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (window_w)
+    (music)
+    (sidestuff)))
+
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end" :spacing 24
+    (metric :label {EWW_BATTERY.BAT0.capacity + "%"}
+            :value {EWW_BATTERY.BAT0.capacity}
+            :onchange "")
+    date
+    time))
+
+(deflisten window :initial "..." "sh ~/.config/eww/scripts/get_window_title")
+(defwidget window_w []
+  (box
+    :halign "start"
+    (label :text "${window}")))
+
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "${music}" : ""}))
+
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)))
+
+
+
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(defpoll date :interval "10s"
+  "date '+%a %b %d, %Y'")
+
+(defpoll time :interval "10s"
+  "date '+%H:%M'")
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :exclusive "true"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "10px"
+                      :anchor "top center")
+  (bar))

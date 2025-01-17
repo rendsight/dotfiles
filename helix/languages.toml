@@ -1,0 +1,31 @@
+[language-server.emmet-ls]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[language-server.eslint-ls]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint-ls.config]
+validate = "on"
+
+[[language]]
+name = "html"
+roots = [".git"]
+language-servers = ["emmet-ls"]
+
+[[language]]
+name = "svelte"
+auto-format = true
+language-servers = ["svelteserver", "eslint-ls", "denols"]
+roots = ["package.lock", "deno.json", "deno.jsonc"]
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "denols"]
+roots = ["package.lock", "deno.json", "deno.jsonc"]
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
+soft-wrap.wrap-at-text-width = true
