@@ -1,0 +1,7 @@
+[font]
+normal = { family = "Terminus", style = "Regular" }
+
+[window]
+dimensions = { columns = 120, lines = 40 }
+title = "Alacritty"
+dynamic_title = false

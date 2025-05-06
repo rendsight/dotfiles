@@ -1,0 +1,20 @@
+[language-server.emmet-ls]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[language-server.eslint-ls]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint-ls.config]
+validate = "on"
+
+[[language]]
+name = "html"
+roots = [".git"]
+language-servers = ["emmet-ls"]
+
+[[language]]
+name = "xml"
+file-types = ["xml"]
+language-servers = ["emmet-ls"]

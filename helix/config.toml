@@ -1,0 +1,32 @@
+[editor]
+line-number = "relative"
+clipboard-provider = "wayland"
+end-of-line-diagnostics = "hint"
+idle-timeout = 0
+completion-timeout = 0
+
+[editor.lsp]
+auto-signature-help = false
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.insert]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+
+[keys.select]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
